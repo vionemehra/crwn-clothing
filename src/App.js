@@ -1,4 +1,6 @@
-import './categories.style.scss'
+import CategoriesList from "./components/categories-list/categories-list.components";
+
+
 const App = () => {
   const categories = [
     {
@@ -28,22 +30,10 @@ const App = () => {
     }
   ];
   return (
-    
-    <div className="categories-container">
-      {
-        categories.map(({id, title, imageUrl})=> (
-          <div className="category-container" key={id}>
-            <img src={imageUrl} className="background-image" />
-           
-            <div className="category-body-container">
-              <h2>{title}</h2>
-              <p>Shop Now</p>
-            </div>
-          </div>
-        ))
-      }
+    <div>
+      <CategoriesList categories={categories}/>
     </div>
-  );
+  )
 }
 
 export default App;
